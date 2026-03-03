@@ -505,7 +505,7 @@ a {
 .videos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.25rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -702,6 +702,19 @@ a {
 .awards-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.awards-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+.awards-photos > div {
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .awards-badge {
@@ -904,6 +917,19 @@ a {
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.social-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.instagram-gallery {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+.instagram-gallery:first-of-type {
+  margin-top: 3rem;
 }
 
 .social-card {
@@ -1225,9 +1251,14 @@ a {
     margin-bottom: 3rem;
   }
 
+  /* Videos: 2 colunas estilo TikTok/Reels no tablet */
   .videos-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+
+  .video-card {
+    border-radius: 8px;
   }
 
   .about-stats {
@@ -1243,9 +1274,21 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .social-grid {
+  .social-grid,
+  .social-grid-4 {
     grid-template-columns: 1fr 1fr !important;
     max-width: 500px;
+  }
+
+  .awards-photos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .instagram-gallery {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
   }
 
   .brands-grid {
@@ -1272,12 +1315,105 @@ a {
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  /* Videos: 2 colunas compactas em celulares pequenos */
   .videos-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .video-card {
+    border-radius: 6px;
+  }
+
+  .video-card video {
+    aspect-ratio: 9/16;
   }
 
   .about-stats {
     grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  /* Cases e social cards menores */
+  .case-brand {
+    font-size: 1.1rem;
+  }
+
+  .case-metric-value {
+    font-size: 1.1rem;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  .social-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .social-name {
+    font-size: 1rem;
+  }
+
+  /* Awards mais compactos */
+  .award-card {
+    padding: 1.5rem;
+  }
+
+  /* Fotos premios em coluna no celular */
+  .awards-container > .reveal:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Contato */
+  .contact-cta {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-cta-title {
+    font-size: 1.2rem;
+  }
+
+  .contact-btn {
+    padding: 0.85rem 2rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Telas muito pequenas (iPhone SE, Galaxy Fold) */
+@media (max-width: 360px) {
+  .section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .videos-grid {
+    gap: 0.4rem;
+  }
+
+  .video-card {
+    border-radius: 4px;
+  }
+
+  .hero-name {
+    font-size: clamp(2rem, 14vw, 3.5rem);
+  }
+
+  .nav-logo {
+    font-size: 1rem;
   }
 }
